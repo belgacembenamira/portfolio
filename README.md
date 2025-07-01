@@ -2,7 +2,9 @@
 
 Bienvenue sur mon portfolio personnel ! Ce site vitrine présente mon parcours, mes compétences et mes projets réalisés en tant que **développeur Full-Stack TypeScript**.
 
-🔗 [Démo en ligne](https://votre-lien.netlify.app) *(ajoutez ici l'URL après déploiement)*
+🔗 [Démo en ligne](
+
+https://belgacembenamira.github.io/portfolio/)
 
 ---
 
