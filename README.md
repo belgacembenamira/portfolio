@@ -4,7 +4,7 @@ Bienvenue sur mon portfolio personnel ! Ce site vitrine présente mon parcours, 
 
 🔗 [Démo en ligne](
 
-https://belgacembenamira.github.io/portfolio/)
+https://resonant-cupcake-b1a7cd.netlify.app/)
 
 ---
 
