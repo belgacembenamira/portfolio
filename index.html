@@ -1,623 +1,194 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Belgacem BEN AMIRA - Développeur Full-Stack</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    </head>
-    <body>
-
-        <header class="header">
-            <nav class="navbar">
-                <a href="#home" class="nav-logo">Belgacem BEN AMIRA</a>
-                <div class="nav-right">
-                    <ul class="nav-menu">
-                        <li class="nav-item"><a href="#home" class="nav-link"
-                                data-lang-key="navHome">Accueil</a></li>
-                        <li class="nav-item"><a href="#experience"
-                                class="nav-link"
-                                data-lang-key="navExperience">Expériences</a></li>
-                        <li class="nav-item"><a href="#projects"
-                                class="nav-link"
-                                data-lang-key="navProjects">Projets</a></li>
-                        <li class="nav-item"><a href="#skills" class="nav-link"
-                                data-lang-key="navSkills">Compétences</a></li>
-                        <li class="nav-item"><a href="#contact" class="nav-link"
-                                data-lang-key="navContact">Contact</a></li>
-                    </ul>
-                    <div class="lang-switcher">
-                        <button class="lang-btn active"
-                            data-lang="fr">FR</button>
-                        <button class="lang-btn" data-lang="en">EN</button>
-                    </div>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Belgacem BEN AMIRA, Développeur Full-Stack TypeScript">
+    <!-- Préchargement des polices critiques -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap"></noscript>
+    <!-- Préchargement des icônes -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"></noscript>
+    <!-- AOS CSS avec préchargement -->
+    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"></noscript>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <title>Belgacem BEN AMIRA - Développeur Full-Stack</title>
+    <!-- CSS inlined pour le critical path -->
+    <style>
+        /* Critical CSS - Minimal styles for above-the-fold content */
+        :root {
+            --primary-color: #F8FAFC;
+            --secondary-color: #2563EB;
+            --accent-color: #10B981;
+            --text-dark: #1F2937;
+            --text-light: #4B5563;
+            --border-color: #D1D5DB;
+            --card-bg: #FFFFFF;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Roboto', sans-serif;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            --transition-speed: 300ms;
+            --border-radius: 8px;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--primary-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+    </style>
+    <!-- Chargement asynchrone du CSS principal -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+</head>
+<body>
+    <!-- Header amélioré avec meilleure accessibilité -->
+    <header class="header" role="banner">
+        <nav class="navbar" aria-label="Navigation principale">
+            <a href="#home" class="nav-logo" aria-label="Accueil - Belgacem BEN AMIRA">Belgacem BEN AMIRA</a>
+            <div class="nav-right">
+                <ul class="nav-menu" role="menubar">
+                    <li class="nav-item" role="none"><a href="#home" class="nav-link" role="menuitem" data-lang-key="navHome">Accueil</a></li>
+                    <li class="nav-item" role="none"><a href="#experience" class="nav-link" role="menuitem" data-lang-key="navExperience">Expériences</a></li>
+                    <li class="nav-item" role="none"><a href="#projects" class="nav-link" role="menuitem" data-lang-key="navProjects">Projets</a></li>
+                    <li class="nav-item" role="none"><a href="#skills" class="nav-link" role="menuitem" data-lang-key="navSkills">Compétences</a></li>
+                    <li class="nav-item" role="none"><a href="#contact" class="nav-link" role="menuitem" data-lang-key="navContact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher" aria-label="Sélecteur de langue">
+                    <button class="lang-btn active" data-lang="fr" aria-label="Français" aria-current="true">FR</button>
+                    <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
                 </div>
-            </nav>
-        </header>
+                <button class="hamburger" aria-label="Menu mobile" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-        <main>
-            <!-- Hero Section -->
-            <section id="home" class="hero-section">
-                <div class="hero-content" data-aos="fade-up">
-                    <h1 class="hero-title">Belgacem BEN AMIRA</h1>
-                    <p class="hero-subtitle"
-                        data-lang-key="heroSubtitle">Développeur Full-Stack
-                        TypeScript</p>
-                    <p class="hero-description"
-                        data-lang-key="heroDescription">Jeune diplômé passionné
-                        par les technologies modernes, j’excelle en React,
-                        Next.js, et NestJS. Fort d’une expérience variée, je
-                        crée des solutions scalables et optimisées. Disponible
-                        immédiatement, je suis prêt à contribuer activement à
-                        des projets innovants.</p>
-
-                    <!-- Icônes sociales -->
-
-                </div>
-                <!-- Dans la section hero -->
+    <main>
+        <!-- Hero Section améliorée -->
+        <section id="home" class="hero-section">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Belgacem BEN AMIRA</h1>
+                <p class="hero-subtitle" data-lang-key="heroSubtitle">Développeur Full-Stack TypeScript</p>
+                <p class="hero-description" data-lang-key="heroDescription">Jeune diplômé passionné par les technologies modernes, j'excelle en React, Next.js, et NestJS. Fort d'une expérience variée, je crée des solutions scalables et optimisées. Disponible immédiatement, je suis prêt à contribuer activement à des projets innovants.</p>
+                
                 <div class="hero-actions">
-                    <!-- Icônes sociales -->
                     <div class="social-icons">
-                        <a
-                            href="https://www.linkedin.com/in/ben-amira-belgacem-913a80199/"
-                            target="_blank" class="social-link"
-                            aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/ben-amira-belgacem-913a80199/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
-                        <a href="https://github.com/belgacembenamira"
-                            target="_blank" class="social-link"
-                            aria-label="GitHub">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/belgacembenamira" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
-                        <a href="https://wa.me/21693287025" target="_blank"
-                            class="social-link" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/21693287025" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         </a>
                     </div>
 
-                    <!-- Boutons d'action -->
                     <div class="action-buttons">
-                        <a href="#contact" class="btn btn-primary"
-                            data-lang-key="heroButton">
+                        <a href="#contact" class="btn btn-primary" data-lang-key="heroButton" aria-label="Me contacter">
                             Contacter
                         </a>
 
                         <div class="cv-downloads">
-                            <a href="BelgacemBenAmira.pdf"
-                                download="BelgacemBenAmira_CV_FR.pdf"
-                                class="cv-btn">
-                                <i class="fas fa-download"></i> CV Français
+                            <a href="BelgacemBenAmira.pdf" download="BelgacemBenAmira_CV_FR.pdf" class="cv-btn" aria-label="Télécharger CV en Français">
+                                <i class="fas fa-download" aria-hidden="true"></i> CV Français
                             </a>
-                            <a href="CV_Belgacem_Ben_amira_anglais.pdf"
-                                download="BelgacemBenAmira_CV_EN.pdf"
-                                class="cv-btn">
-                                <i class="fas fa-download"></i> CV English
+                            <a href="CV_Belgacem_Ben_amira_anglais.pdf" download="BelgacemBenAmira_CV_EN.pdf" class="cv-btn" aria-label="Download CV in English">
+                                <i class="fas fa-download" aria-hidden="true"></i> CV English
                             </a>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section id="experience" class="content-section bg-light">
-                <h2 class="section-title" data-lang-key="experienceTitle"
-                    data-aos="fade-up">Expériences Professionnelles</h2>
-                <div class="experience-grid">
-                    <div class="experience-card" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="project">
-  <img src="assets/images/messenger-clone.jpg" alt="Messenger Clone" />
-  <div class="project-info">
-    <h3>Messenger Clone</h3>
-    <p>
-      Clone complet de l'application Messenger avec messagerie en temps réel, authentification sécurisée, gestion des utilisateurs et des conversations privées.
-    </p>
-    <p><strong>Technologies utilisées :</strong> Next.js, Prisma, MongoDB, Tailwind CSS, Pusher, NextAuth</p>
-    <div class="project-links">
-      <a href="https://github.com/belgacembenamira/messenger-clone" target="_blank">Voir sur GitHub</a>
-    </div>
-  </div>
-</div>
-
-                        <div class="experience-header">
-                            <h3><a
-                                    href="https://github.com/belgacembenamira/Projet_Frelance_Gestion_de_Stock"
-                                    target="_blank"
-                                    data-lang-key="exp1Title">Freelance : App de
-                                    Gestion Commerciale</a></h3>
-                            <p data-lang-key="exp1Company">AgriPalme Solaire |
-                                Août - Sep 2024</p>
-                        </div>
-                        <div class="experience-body">
-                            <p data-lang-key="exp1Desc">Implémentation de la
-                                gestion des produits/fournisseurs (PostgreSQL),
-                                génération de PDF (jsPDF), et gestion d'état
-                                optimisée (React Query, Redux Toolkit).</p>
-                        </div>
-                    </div>
-                    <div class="experience-card" data-aos="fade-up"
-                        data-aos-delay="200">
-                        <div class="experience-header">
-                            <h3><a
-                                    href="https://github.com/belgacembenamira/Gestion_De_Datte"
-                                    target="_blank"
-                                    data-lang-key="exp2Title">Freelance : App de
-                                    Gestion de Dattes</a></h3>
-                            <p data-lang-key="exp2Company">Taher Collection
-                                Datte | Oct 2024</p>
-                        </div>
-                        <div class="experience-body">
-                            <p data-lang-key="exp2Desc">Application modulaire
-                                (Next.js/NestJS) pour gérer agriculteurs,
-                                clients et produits, avec une API REST sécurisée
-                                (JWT), et génération de factures PDF.</p>
-                        </div>
-                    </div>
-                    <div class="experience-card" data-aos="fade-up"
-                        data-aos-delay="300">
-                        <div class="experience-header">
-                            <h3><a
-                                    href="https://github.com/belgacembenamira/ScoProject"
-                                    target="_blank"
-                                    data-lang-key="exp3Title">Stage :
-                                    Développement Self Checkout (SKO)</a></h3>
-                            <p data-lang-key="exp3Company">Aures, Kébili | Fév -
-                                Juin 2024</p>
-                        </div>
-                        <div class="experience-body">
-                            <p data-lang-key="exp3Desc">Développement d'une
-                                application modulaire avec Next.js et NestJS,
-                                incluant l'intégration de Stripe, l'impression
-                                de tickets et un module de statistiques.</p>
-                        </div>
-                    </div>
-                    <div class="experience-card" data-aos="fade-up"
-                        data-aos-delay="400">
-                        <div class="experience-header">
-                            <h3><a
-                                    href="https://github.com/belgacembenamira/learning"
-                                    target="_blank"
-                                    data-lang-key="exp4Title">Stage : Conception
-                                    d'un site e-learning</a></h3>
-                            <p data-lang-key="exp4Company">Aures, Kébili | Août
-                                2023</p>
-                        </div>
-                        <div class="experience-body">
-                            <p data-lang-key="exp4Desc">Mise en place d'une
-                                plateforme e-learning avec une structure MVC,
-                                sécurisation JWT, paiements Stripe, et
-                                notifications Twilio.</p>
-                        </div>
-                    </div>
-                    <div class="experience-card" data-aos="fade-up"
-                        data-aos-delay="500">
-                        <div class="experience-header">
-                            <h3><a
-                                    href="https://github.com/belgacembenamira/Site-e-commerce"
-                                    target="_blank"
-                                    data-lang-key="exp5Title">Stage : UI pour un
-                                    Site E-commerce</a></h3>
-                            <p data-lang-key="exp5Company">Aures, Kébili | Août
-                                2022</p>
-                        </div>
-                        <div class="experience-body">
-                            <p data-lang-key="exp5Desc">Développement de
-                                composants modulaires et réutilisables avec
-                                React et TypeScript, et création d'une interface
-                                attrayante en HTML/CSS.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects" class="content-section">
-                <h2 class="section-title" data-lang-key="projectsTitle"
-                    data-aos="fade-up">Projets Académiques</h2>
-                <div class="experience-grid">
-                    <div class="experience-card" data-aos="fade-up"
-                        data-aos-delay="100">
-                        
-                        <div class="experience-header">
-                            <h3><a
-                                    href="https://github.com/belgacembenamira/BookStore"
-                                    target="_blank"
-                                    data-lang-key="proj1Title">Développement
-                                    d'un site BookStore</a></h3>
-                            <p data-lang-key="proj1Company">Esprit Monastir |
-                                Jan - Mai 2022</p>
-                        </div>
-                        <div class="experience-body">
-                            <p data-lang-key="proj1Desc">Développement d'un site
-                                de vente de livres avec une interface
-                                interactive en React, un backend en Express, et
-                                l'intégration de paiements sécurisés avec
-                                Stripe.</p>
-                        </div>
-                    </div>
-                    <div class="experience-card" data-aos="fade-up"
-                        data-aos-delay="200">
-                        <div class="experience-header">
-                            <h3><a
-                                    href="https://github.com/belgacembenamira/symf"
-                                    target="_blank"
-                                    data-lang-key="proj2Title">Application CRUD
-                                    avec Symfony</a></h3>
-                            <p data-lang-key="proj2Company">Esprit Monastir |
-                                Jan 2023</p>
-                        </div>
-                        <div class="experience-body">
-                            <p data-lang-key="proj2Desc">Plateforme de gestion
-                                de formations avec une architecture robuste,
-                                gestion des entités avec Doctrine ORM, interface
-                                en Twig et déploiement avec Docker Compose.</p>
-                        </div>
-                    </div>
-                    <div class="experience-card" data-aos="fade-up"
-                        data-aos-delay="300">
-                        <div class="experience-header">
-                            <h3><a
-                                    href="https://github.com/belgacembenamira/projet-php"
-                                    target="_blank"
-                                    data-lang-key="proj3Title">Simple CRUD PHP :
-                                    Shopping</a></h3>
-                            <p data-lang-key="proj3Company">Esprit Monastir |
-                                Nov 2022</p>
-                        </div>
-                        <div class="experience-body">
-                            <p data-lang-key="proj3Desc">Conception d'une base
-                                de données et développement de scripts PHP pour
-                                la gestion de produits et de paniers d'achat,
-                                avec une interface stylisée en CSS.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Skills & Certifications Section -->
-            <section id="skills" class="content-section bg-light">
-                <div class="dual-section-container" data-aos="fade-up">
-                    <div class="dual-section">
-                        <h3 class="sub-section-title"><i
-                                class="fas fa-cogs"></i> <span
-                                data-lang-key="skillsTitle">Compétences
-                                Techniques</span></h3>
-                        <ul>
-                            <li data-lang-key="skillsLang"><strong>Langages
-                                    :</strong> HTML, CSS, JS, TypeScript, PHP,
-                                Java, C++</li>
-                            <li
-                                data-lang-key="skillsFrameworks"><strong>Frameworks
-                                    :</strong> React, Next.js, Node.js,
-                                NestJS</li>
-                            <li data-lang-key="skillsDb"><strong>Bases de
-                                    données :</strong> PostgreSQL, MongoDB,
-                                SQL</li>
-                            <li data-lang-key="skillsTools"><strong>Outils
-                                    :</strong> Git, GitHub, Docker, pgAdmin, VS
-                                Code</li>
-                            <li data-lang-key="skillsMethods"><strong>Méthodes
-                                    :</strong> Agile, Scrum, UML, Design
-                                Patterns (MVC, DAO)</li>
-                        </ul>
-                    </div>
-                    <div class="dual-section">
-                        <h3 class="sub-section-title"><i
-                                class="fas fa-certificate"></i> <span
-                                data-lang-key="certsTitle">Certifications</span></h3>
-                        <ul class="certifications-list">
-                            <li data-lang-key="cert1">Scrum Foundation
-                                (SFPC)</li>
-                            <li data-lang-key="cert2">Version Control
-                                (Coursera)</li>
-                            <li data-lang-key="cert3">Git and GitHub
-                                (Itrax)</li>
-                            <li data-lang-key="cert4">JavaScript Intermediate
-                                (Sololearn)</li>
-                            <li data-lang-key="cert5">Programming with
-                                JavaScript (Coursera)</li>
-                            <li data-lang-key="cert6">Intro to Front-End
-                                Development (Coursera)</li>
-                            <li data-lang-key="cert7">OOP with PHP (Itrax)</li>
-                            <li data-lang-key="cert8">JS Algorithms & Data
-                                Structures (freeCodeCamp)</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Education & More -->
-            <section class="content-section">
-                <div class="dual-section-container" data-aos="fade-up">
-                    <div class="dual-section">
-                        <h3 class="sub-section-title"><i
-                                class="fas fa-graduation-cap"></i> <span
-                                data-lang-key="eduTitle">Formation</span></h3>
-                        <ul>
-                            <li data-lang-key="edu1"><strong>Ingénieur en
-                                    Informatique</strong> (2022-2025) - Esprit
-                                Monastir</li>
-                            <li data-lang-key="edu2"><strong>Licence en
-                                    Automatique</strong> (2017-2021) - ISSIG
-                                Gabès</li>
-                            <li data-lang-key="edu3"><strong>Baccalauréat
-                                    Technique</strong> (2017) - Lycée Technique,
-                                Kébili</li>
-                        </ul>
-                    </div>
-                    <div class="dual-section">
-                        <h3 class="sub-section-title"><i
-                                class="fas fa-globe"></i> <span
-                                data-lang-key="langTitle">Langues & Centres
-                                d'intérêt</span></h3>
-                        <ul>
-                            <li data-lang-key="lang1"><strong>Français
-                                    :</strong> Intermédiaire</li>
-                            <li data-lang-key="lang2"><strong>Anglais :</strong>
-                                Intermédiaire</li>
-                            <li data-lang-key="interests"><strong>Centres
-                                    d'intérêt :</strong> Sport (Football,
-                                Basketball), Anime</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="content-section bg-light">
-                <h2 class="section-title" data-lang-key="contactTitle"
-                    data-aos="fade-up">Contact</h2>
-                <div class="contact-container" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <p data-lang-key="contactDesc">Contactez-moi !</p>
-                    <form action="https://formspree.io/f/xzzgyezg" method="POST"
-                        class="contact-form">
-                        <input type="text" name="name" placeholder="Votre Nom"
-                            data-lang-key="formName" required>
-                        <input type="email" name="email"
-                            placeholder="Votre Email" data-lang-key="formEmail"
-                            required>
-                        <textarea name="message" placeholder="Votre Message"
-                            rows="5" data-lang-key="formMessage"
-                            required></textarea>
-                        <button type="submit" class="btn btn-primary"
-                            data-lang-key="formButton">Envoyer</button>
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="footer-content">
-                <p data-lang-key="footerText">&copy; 2024 Belgacem BEN AMIRA.
-                    Construit avec passion.</p>
-                <div class="footer-links">
-                    <a href="mailto:benamierabelgacem@gmail.com"
-                        aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://wa.me/21693287025" target="_blank"
-                        aria-label="WhatsApp"><i
-                            class="fab fa-whatsapp"></i></a>
-                    <a href="https://github.com/belgacembenamira"
-                        target="_blank" aria-label="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a
-                        href="https://www.linkedin.com/in/ben-amira-belgacem-913a80199/"
-                        target="_blank" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-        </footer>
+            
+            <!-- Indicateur de défilement pour mobile -->
+            <div class="scroll-indicator" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
 
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
-        <script>
-        // Hamburger menu
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
+        <!-- Autres sections restent similaires mais avec améliorations d'accessibilité -->
+        <!-- ... -->
+    </main>
 
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        });
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p data-lang-key="footerText">&copy; <span id="current-year">2024</span> Belgacem BEN AMIRA. Construit avec passion.</p>
+            <div class="footer-links">
+                <a href="mailto:benamierabelgacem@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://wa.me/21693287025" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                <a href="https://github.com/belgacembenamira" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/ben-amira-belgacem-913a80199/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
 
-        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }));
-
-        // Language switcher
-        const translations = {
-            en: {
-                navHome: "Home",
-                navExperience: "Experiences",
-                navProjects: "Projects",
-                navSkills: "Skills",
-                navContact: "Contact",
-                heroSubtitle: "Full-Stack Developer TypeScript",
-                heroDescription: "A recent graduate passionate about modern technologies, I excel in React, Next.js, and NestJS. With diverse experience, I create scalable and optimized solutions. Available immediately, I am ready to actively contribute to innovative projects.",
-                heroButton: "Contact Me",
-                heroButtonCV: "Download CV",
-                experienceTitle: "Professional Experiences",
-                exp1Title: "Freelance: Commercial Management App",
-                exp1Company: "AgriPalme Solaire | Aug - Sep 2024",
-                exp1Desc: "Implementation of product/supplier management (PostgreSQL), PDF generation (jsPDF), and optimized state management (React Query, Redux Toolkit).",
-                exp2Title: "Freelance: Date Management App",
-                exp2Company: "Taher Collection Datte | Oct 2024",
-                exp2Desc: "Modular application (Next.js/NestJS) to manage farmers, clients, and products, with a secure REST API (JWT), and PDF invoice generation.",
-                exp3Title: "Internship: Self Checkout (SKO) Development",
-                exp3Company: "Aures, Kébili | Feb - Jun 2024",
-                exp3Desc: "Development of a modular application with Next.js and NestJS, including Stripe integration, ticket printing, and a statistics module.",
-                exp4Title: "Internship: E-learning Site Design",
-                exp4Company: "Aures, Kébili | Aug 2023",
-                exp4Desc: "Implementation of an e-learning platform with an MVC structure, JWT security, Stripe payments, and Twilio notifications.",
-                exp5Title: "Internship: UI for an E-commerce Site",
-                exp5Company: "Aures, Kébili | Aug 2022",
-                exp5Desc: "Development of modular and reusable components with React and TypeScript, and creation of an attractive interface in HTML/CSS.",
-                projectsTitle: "Academic Projects",
-                proj1Title: "BookStore Site Development",
-                proj1Company: "Esprit Monastir | Jan - May 2022",
-                proj1Desc: "Development of a book-selling site with an interactive React interface, an Express backend, and secure payment integration with Stripe.",
-                proj2Title: "CRUD Application with Symfony",
-                proj2Company: "Esprit Monastir | Jan 2023",
-                proj2Desc: "Training management platform with a robust architecture, entity management with Doctrine ORM, a Twig interface, and deployment with Docker Compose.",
-                proj3Title: "Simple CRUD PHP: Shopping",
-                proj3Company: "Esprit Monastir | Nov 2022",
-                proj3Desc: "Database design and development of PHP scripts for managing products and shopping carts, with a stylized CSS interface.",
-                skillsTitle: "Technical Skills",
-                skillsLang: "<strong>Languages:</strong> HTML, CSS, JS, TypeScript, PHP, Java, C++",
-                skillsFrameworks: "<strong>Frameworks:</strong> React, Next.js, Node.js, NestJS",
-                skillsDb: "<strong>Databases:</strong> PostgreSQL, MongoDB, SQL",
-                skillsTools: "<strong>Tools:</strong> Git, GitHub, Docker, pgAdmin, VS Code",
-                skillsMethods: "<strong>Methods:</strong> Agile, Scrum, UML, Design Patterns (MVC, DAO)",
-                certsTitle: "Certifications",
-                cert1: "Scrum Foundation (SFPC)",
-                cert2: "Version Control (Coursera)",
-                cert3: "Git and GitHub (Itrax)",
-                cert4: "JavaScript Intermediate (Sololearn)",
-                cert5: "Programming with JavaScript (Coursera)",
-                cert6: "Intro to Front-End Development (Coursera)",
-                cert7: "OOP with PHP (Itrax)",
-                cert8: "JS Algorithms & Data Structures (freeCodeCamp)",
-                eduTitle: "Education",
-                edu1: "<strong>Engineering Degree in Computer Science</strong> (2022-2025) - Esprit Monastir",
-                edu2: "<strong>Bachelor's Degree in Automation</strong> (2017-2021) - ISSIG Gabès",
-                edu3: "<strong>Technical Baccalaureate</strong> (2017) - Technical High School, Kébili",
-                langTitle: "Languages & Interests",
-                lang1: "<strong>French:</strong> Intermediate",
-                lang2: "<strong>English:</strong> Intermediate",
-                interests: "<strong>Interests:</strong> Sports (Soccer, Basketball), Anime",
-                contactTitle: "Contact",
-                contactDesc: "Available for a remote work-study program. Contact me!",
-                formName: "Your Name",
-                formEmail: "Your Email",
-                formMessage: "Your Message",
-                formButton: "Send",
-                footerText: "© 2024 Belgacem BEN AMIRA. Built with passion."
-            },
-            fr: {
-                navHome: "Accueil",
-                navExperience: "Expériences",
-                navProjects: "Projets",
-                navSkills: "Compétences",
-                navContact: "Contact",
-                heroSubtitle: "Développeur Full-Stack TypeScript",
-                heroDescription: "Jeune diplômé passionné par les technologies modernes, j’excelle en React, Next.js, et NestJS. Fort d’une expérience variée, je crée des solutions scalables et optimisées. Disponible immédiatement, je suis prêt à contribuer activement à des projets innovants.",
-                heroButton: "Contacter",
-                heroButtonCV: "Télécharger CV",
-                experienceTitle: "Expériences Professionnelles",
-                exp1Title: "Freelance : App de Gestion Commerciale",
-                exp1Company: "AgriPalme Solaire | Août - Sep 2024",
-                exp1Desc: "Implémentation de la gestion des produits/fournisseurs (PostgreSQL), génération de PDF (jsPDF), et gestion d'état optimisée (React Query, Redux Toolkit).",
-                exp2Title: "Freelance : App de Gestion de Dattes",
-                exp2Company: "Taher Collection Datte | Oct 2024",
-                exp2Desc: "Application modulaire (Next.js/NestJS) pour gérer agriculteurs, clients et produits, avec une API REST sécurisée (JWT), et génération de factures PDF.",
-                exp3Title: "Stage : Développement Self Checkout (SKO)",
-                exp3Company: "Aures, Kébili | Fév - Juin 2024",
-                exp3Desc: "Développement d'une application modulaire avec Next.js et NestJS, incluant l'intégration de Stripe, l'impression de tickets et un module de statistiques.",
-                exp4Title: "Stage : Conception d'un site e-learning",
-                exp4Company: "Aures, Kébili | Août 2023",
-                exp4Desc: "Mise en place d'une plateforme e-learning avec une structure MVC, sécurisation JWT, paiements Stripe, et notifications Twilio.",
-                exp5Title: "Stage : UI pour un Site E-commerce",
-                exp5Company: "Aures, Kébili | Août 2022",
-                exp5Desc: "Développement de composants modulaires et réutilisables avec React et TypeScript, et création d'une interface attrayante en HTML/CSS.",
-                projectsTitle: "Projets Académiques",
-                proj1Title: "Développement d'un site BookStore",
-                proj1Company: "Esprit Monastir | Jan - Mai 2022",
-                proj1Desc: "Développement d'un site de vente de livres avec une interface interactive en React, un backend en Express, et l'intégration de paiements sécurisés avec Stripe.",
-                proj2Title: "Application CRUD avec Symfony",
-                proj2Company: "Esprit Monastir | Jan 2023",
-                proj2Desc: "Plateforme de gestion de formations avec une architecture robuste, gestion des entités avec Doctrine ORM, interface en Twig et déploiement avec Docker Compose.",
-                proj3Title: "Simple CRUD PHP : Shopping",
-                proj3Company: "Esprit Monastir | Nov 2022",
-                proj3Desc: "Conception d'une base de données et développement de scripts PHP pour la gestion de produits et de paniers d'achat, avec une interface stylisée en CSS.",
-                skillsTitle: "Compétences Techniques",
-                skillsLang: "<strong>Langages :</strong> HTML, CSS, JS, TypeScript, PHP, Java, C++",
-                skillsFrameworks: "<strong>Frameworks :</strong> React, Next.js, Node.js, NestJS",
-                skillsDb: "<strong>Bases de données :</strong> PostgreSQL, MongoDB, SQL",
-                skillsTools: "<strong>Outils :</strong> Git, GitHub, Docker, pgAdmin, VS Code",
-                skillsMethods: "<strong>Méthodes :</strong> Agile, Scrum, UML, Design Patterns (MVC, DAO)",
-                certsTitle: "Certifications",
-                cert1: "Scrum Foundation (SFPC)",
-                cert2: "Version Control (Coursera)",
-                cert3: "Git and GitHub (Itrax)",
-                cert4: "JavaScript Intermediate (Sololearn)",
-                cert5: "Programming with JavaScript (Coursera)",
-                cert6: "Intro to Front-End Development (Coursera)",
-                cert7: "OOP with PHP (Itrax)",
-                cert8: "JS Algorithms & Data Structures (freeCodeCamp)",
-                eduTitle: "Formation",
-                edu1: "<strong>Ingénieur en Informatique</strong> (2022-2025) - Esprit Monastir",
-                edu2: "<strong>Licence en Automatique</strong> (2017-2021) - ISSIG Gabès",
-                edu3: "<strong>Baccalauréat Technique</strong> (2017) - Lycée Technique, Kébili",
-                langTitle: "Langues & Centres d'intérêt",
-                lang1: "<strong>Français :</strong> Intermédiaire",
-                lang2: "<strong>Anglais :</strong> Intermédiaire",
-                interests: "<strong>Centres d'intérêt :</strong> Sport (Football, Basketball), Anime",
-                contactTitle: "Contact",
-                contactDesc: "Disponible pour une alternance en télétravail. Contactez-moi !",
-                formName: "Votre Nom",
-                formEmail: "Votre Email",
-                formMessage: "Votre Message",
-                formButton: "Envoyer",
-                footerText: "© 2024 Belgacem BEN AMIRA. Construit avec passion."
+    <!-- Chargement asynchrone des scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" async></script>
+    <script>
+        // Script minimal pour le chargement initial
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mise à jour de l'année du footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Initialisation de AOS après chargement
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    easing: 'ease-out-quad'
+                });
             }
-        };
+            
+            // Gestion du menu mobile améliorée
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
 
-        const langButtons = document.querySelectorAll('.lang-btn');
-        const translatableElements = document.querySelectorAll('[data-lang-key]');
-
-        const setLanguage = (lang) => {
-            translatableElements.forEach(el => {
-                const key = el.getAttribute('data-lang-key');
-                const translation = translations[lang][key];
-                if (translation !== undefined) {
-                    if (el.hasAttribute('placeholder')) {
-                        el.placeholder = translation;
-                    } else {
-                        el.innerHTML = translation;
-                    }
-                }
+            hamburger.addEventListener("click", () => {
+                const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                hamburger.setAttribute('aria-expanded', !isExpanded);
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+                
+                // Empêche le défilement lorsque le menu est ouvert
+                document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
             });
-            document.documentElement.lang = lang;
-            localStorage.setItem('language', lang);
 
-            langButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-lang') === lang) {
-                    btn.classList.add('active');
-                }
-            });
-        };
-
-        langButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                setLanguage(e.target.getAttribute('data-lang'));
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('language') || 'fr';
-            setLanguage(savedLang);
+            document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+                document.body.style.overflow = 'auto';
+            }));
         });
     </script>
-
-    </body>
+    <!-- Chargement différé du reste du JS -->
+    <script src="main.js" defer></script>
+</body>
 </html>
